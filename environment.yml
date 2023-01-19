@@ -1,0 +1,9 @@
+name: fastai
+channels:
+  - fastchan
+  - defaults
+dependencies:
+  - fastai=2.7.10
+  - pip:
+    - ipykernel
+prefix: /opt/miniconda3/envs/fastai
