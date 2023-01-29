@@ -14,6 +14,7 @@ from fastai.vision import (
     CategoryBlock,
     RandomSplitter,
     RegexLabeller,
+    Learner,
     vision_learner,
     resnet34,
     error_rate,
@@ -54,7 +55,7 @@ def get_dataloaders() -> DataLoaders:
     return pets.dataloaders(path_im, bs=bs)
 
 
-def get_learner():
+def get_learner() -> Learner:
     set_seed(config.SEED)
     dls = get_dataloaders()
     return vision_learner(dls, resnet34, metrics=error_rate)
