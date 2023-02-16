@@ -1,5 +1,5 @@
 import config
-from fastai.vision import (
+from fastai.vision.all import (
     DataLoaders,
     untar_data,
     URLs,
