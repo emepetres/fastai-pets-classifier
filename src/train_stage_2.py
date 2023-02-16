@@ -1,8 +1,8 @@
-from learner import get_learner
+from learner import get_resnet_learner
 
 
 if __name__ == "__main__":
-    learn = get_learner()
+    learn = get_resnet_learner()
     learn.load("stage_1")
 
     learn.unfreeze()
