@@ -3,7 +3,9 @@ channels:
   - fastchan
   - defaults
 dependencies:
+  - python=3.10
+  - pip
   - fastai=2.7.10
   - pip:
-    - ipykernel
+      - ipykernel
 prefix: /opt/miniconda3/envs/fastai
