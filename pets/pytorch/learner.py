@@ -22,8 +22,8 @@ from fastai.optimizer import OptimWrapper
 from pets.pytorch.dataloaders import get_dataloaders
 
 
-def get_learner():
-    dls = get_dataloaders()
+def get_learner(bs=64):
+    dls = get_dataloaders(bs)
 
     num_classes = len(dls.valid.dataset.label_to_int)
 

@@ -61,16 +61,16 @@ def get_datasets() -> Tuple[PetsDataset, PetsDataset]:
     return train_dataset, valid_dataset
 
 
-def get_dataloaders():
+def get_dataloaders(bs=64):
     dtrain, dvalid = get_datasets()
 
-    train_dataloader = DataLoader(dtrain, shuffle=True, drop_last=True, batch_size=64)
+    train_dataloader = DataLoader(dtrain, shuffle=True, drop_last=True, batch_size=bs)
 
     # we can increase the validation batch size here,
     # as on validation we don't use grads
     valid_dataloader = DataLoader(
         dvalid,
-        batch_size=128,
+        batch_size=bs * 2,
     )
 
     return DataLoaders(train_dataloader, valid_dataloader)
