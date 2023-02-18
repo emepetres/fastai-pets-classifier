@@ -27,6 +27,5 @@ Training using raw pytorch data api, our own model, and a pytorch optimizer. Fro
 ```bash
 conda create -f environment.yml
 conda activate fastai
-python -W ignore -m pets.fine_tune.train_stage_1
-python -W ignore -m pets.fine_tune.train_stage_2
+python -W ignore -m pets.raw.train
 ```
