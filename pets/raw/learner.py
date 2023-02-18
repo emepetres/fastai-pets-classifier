@@ -19,7 +19,7 @@ from fastai.callback.schedule import (  # noqa: F811
 )  # To get `fit_one_cycle`, `lr_find`, and more
 from fastai.optimizer import OptimWrapper
 
-from raw_dataloaders import get_dataloaders
+from pets.raw.dataloaders import get_dataloaders
 
 
 def get_learner():
@@ -29,13 +29,12 @@ def get_learner():
 
     model = resnet34(pretrained=True)
     model.fc = nn.Linear(512, num_classes, bias=True)
-    model.cuda()
 
     opt_func = partial(OptimWrapper, opt=AdamW)
 
     return Learner(
         dls,
-        model,
+        model.cuda(),
         opt_func=opt_func,
         loss_func=CrossEntropyLossFlat(),
         metrics=accuracy,

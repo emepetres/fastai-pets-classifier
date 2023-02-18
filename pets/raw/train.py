@@ -1,4 +1,4 @@
-from raw_learner import get_learner
+from pets.raw.learner import get_learner
 
 if __name__ == "__main__":
     learn = get_learner()

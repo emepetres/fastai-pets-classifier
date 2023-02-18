@@ -1,4 +1,4 @@
-from learner import get_resnet_learner
+from pets.fine_tune.learner import get_resnet_learner
 
 
 if __name__ == "__main__":

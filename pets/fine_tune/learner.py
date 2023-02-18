@@ -1,5 +1,5 @@
-import config
-from dataloaders import get_dataloaders
+from pets import config
+from pets.fine_tune.dataloaders import get_dataloaders
 
 from fastai.vision.all import (
     set_seed,

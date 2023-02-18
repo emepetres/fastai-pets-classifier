@@ -5,9 +5,6 @@ import numpy as np
 from torch import nn
 from torchvision.transforms import CenterCrop, RandomResizedCrop, Normalize
 from torch.utils.data import DataLoader
-from torchvision.models import resnet34
-from torch.optim import AdamW
-from torchvision.transforms import ToTensor
 
 from fastai.data.external import untar_data, URLs
 from fastai.vision.data import imagenet_stats
@@ -16,7 +13,8 @@ from fastcore.xtras import (  # noqa: F401
     Path,
 )  # to bring in some patched functionalities we will use later
 
-from raw_dataset import PetsDataset
+from pets.raw.dataset import PetsDataset
+
 
 def get_items_transforms():
     train_transforms = nn.Sequential(

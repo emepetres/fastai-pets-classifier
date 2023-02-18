@@ -1,4 +1,3 @@
-import config
 from fastai.vision.all import (
     DataLoaders,
     untar_data,
