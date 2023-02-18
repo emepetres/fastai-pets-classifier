@@ -19,7 +19,7 @@ from fastai.callback.schedule import (  # noqa: F811
 )  # To get `fit_one_cycle`, `lr_find`, and more
 from fastai.optimizer import OptimWrapper
 
-from pets.raw.dataloaders import get_dataloaders
+from pets.pytorch.dataloaders import get_dataloaders
 
 
 def get_learner():

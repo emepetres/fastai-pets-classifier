@@ -2,7 +2,7 @@
 
 Pets classifier samples with/without fastai. Also a second sample using raw pytorch for data, model and optimizer, except the learner.
 
-## Fine-tune sample
+## Manual fine-tune sample
 
 Simple sample that shows how fine-tunning is done by fastai in two stages.
 
@@ -16,7 +16,7 @@ python -W ignore -m pets.fine_tune.train_stage_1
 python -W ignore -m pets.fine_tune.train_stage_2
 ```
 
-## Raw
+## Pytorch
 
 Training using raw pytorch data api, our own model, and a pytorch optimizer. From fastai we are just using the learner.
 
@@ -27,5 +27,7 @@ Training using raw pytorch data api, our own model, and a pytorch optimizer. Fro
 ```bash
 conda create -f environment.yml
 conda activate fastai
-python -W ignore -m pets.raw.train
+python -W ignore -m pets.pytorch.train
+```
+
 ```

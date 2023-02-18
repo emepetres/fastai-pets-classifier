@@ -1,4 +1,4 @@
-from pets.raw.learner import get_learner
+from pets.pytorch.learner import get_learner
 
 if __name__ == "__main__":
     learn = get_learner()
@@ -10,6 +10,6 @@ if __name__ == "__main__":
             layer.requires_grad_(False)
 
     learn.fit_one_cycle(5, 1e-3)
-    learn.save("raw")
+    learn.save("pytorch")
 
     # now we could perform a second stage for complete model

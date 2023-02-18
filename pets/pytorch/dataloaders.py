@@ -13,7 +13,7 @@ from fastcore.xtras import (  # noqa: F401
     Path,
 )  # to bring in some patched functionalities we will use later
 
-from pets.raw.dataset import PetsDataset
+from pets.pytorch.dataset import PetsDataset
 
 
 def get_items_transforms():
