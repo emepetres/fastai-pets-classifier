@@ -32,14 +32,6 @@ def get_datasets() -> Tuple[PetsDataset, PetsDataset]:
     # dataset
     dataset_path = untar_data(URLs.PETS)
 
-    # transforms
-    train_transforms = nn.Sequential(
-        RandomResizedCrop((224, 224)), Normalize(*imagenet_stats)
-    )
-    # On validation we don't apply augmentations, only transformations
-    # That's why RandomResizedCrop -> CenterCrop
-    valid_transforms = nn.Sequential(CenterCrop((224, 224)), Normalize(*imagenet_stats))
-
     # labels
     label_pat = r"^(.*)_\d+\.jpg$"
     filenames = (dataset_path / "images").ls(file_exts=".jpg")
