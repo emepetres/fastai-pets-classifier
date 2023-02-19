@@ -21,6 +21,7 @@ python -W ignore -m pets.fine_tune.train_stage_2
 Training using raw pytorch data api, our own model, and a pytorch optimizer. From fastai we are just using the learner.
 
 **FIXME**: It seems to not be using the GPU.
+The reason is that `Normalize` transform is being done in the items transforms side. TODO do Normalize as a batch transform.
 
 **FIXME**: Are we really freezing the model?
 
