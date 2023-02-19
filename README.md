@@ -34,8 +34,6 @@ python -W ignore -m pets.pytorch.train
 
 Support to return no label if the image is not recognized, by turning single label classification into multilabel with an accuracy threshold of 0.95.
 
-**FIXME**: Predictions aren't working.
-
 ```bash
 conda create -f environment.yml
 conda activate fastai

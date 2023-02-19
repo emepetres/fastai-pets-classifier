@@ -1,7 +1,6 @@
 from typing import List
 from pets import config
 from pets.unknown_imgs.dataloaders import get_dataloaders
-from fastai.vision.data import PILImage
 
 from fastai.vision.all import (
     set_seed,
@@ -23,9 +22,9 @@ def get_learner() -> Learner:
     return vision_learner(dls, resnet34, metrics=partial(accuracy_multi, thresh=0.95))
 
 
-def predict(checkpoint: str, im: PILImage) -> List[str]:
+def predict(checkpoint: str, path: str) -> List[str]:
     learn = get_learner()
     learn.load(checkpoint)
     learn.loss_func.thresh = 0.95
 
-    return learn.predict(im)[0]
+    return learn.predict(path)[0]
