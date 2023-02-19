@@ -23,7 +23,7 @@ Training using raw pytorch data api, our own model, and a pytorch optimizer. Fro
 **FIXME**: It seems to not be using the GPU.
 The reason is that `Normalize` transform is being done in the items transforms side. TODO do Normalize as a batch transform.
 
-**FIXME**: Are we really freezing the model?
+**TODO**: Check if model is being correctly freezed.
 
 ```bash
 conda create -f environment.yml
@@ -40,3 +40,18 @@ conda create -f environment.yml
 conda activate fastai
 python -W ignore -m pets.unknown_imgs.train
 ```
+
+## Deployment
+
+Shows how to deploy with and without using fastai. The former is easier, but fastai is too unstable to be used as inference framework, as with time it is quite hard to replicate exact environment, not mentioning upgrading fastai code to a new version (many breaking changes).
+
+```bash
+conda create -f environment.yml
+conda activate fastai
+python -W ignore -m pets.deploy.train
+python -W ignore -m pets.deploy.with_fastai
+```
+
+**TODO**: deployment without fastai
+
+**TODO**: deployment on hugging face
